@@ -27,10 +27,14 @@ int main (int argc,char *argv[])
 	printf("%d\n",sizeof(c));
 	digitalWrite(LED, HIGH);	
 	delay(10);
+	int sum=0;
 	for(i=0;i<(c[2]-1);i++){
 		serialPutchar(fd,c[i]);
-		c[(c[2]-1)]+=c[i];
+		sum+=c[i];
+		//c[(c[2]-1)]+=c[i];
+		
 	}
+		c[(c[2]-1)]=sum&0xff;
 	serialPutchar(fd,c[(c[2]-1)]);
 	delay(10);
 	digitalWrite(LED, LOW);
