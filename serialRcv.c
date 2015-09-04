@@ -95,6 +95,8 @@ int main (int argc,char *argv[])
                     completa=0;
                     printf("Rcv: ");
                     printMsg(rcv);
+                    printf("TAM %.2x\n",rcv[2]);
+                    printf("DST %.2x\n",rcv[3]);
                     printf("CMD %.2x\n",rcv[4]);
                     printf("FROM %.2x\n",rcv[5]);
                     if(rcv[4]==0x42){
